@@ -1,0 +1,63 @@
+.aboutWrapper {
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+  padding: 0 4vw;
+}
+
+.seven h1 {
+text-align: center;
+    font-size:30px; font-weight:300; color:#222; letter-spacing:1px;
+    text-transform: uppercase;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+    padding:5vh 0 2vh;
+}
+
+.seven h1:after,.seven h1:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #c50000;
+    border-top: 1px solid #c50000;
+    height: 5px;
+  background-color:#f8f8f8;
+}
+
+.l-img-r-txt {
+  display: flow-root;
+  flex-wrap: wrap;
+}
+
+.l-img-r-txt_img {
+  height: 300px;
+  width: 100%;
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.l-img-r-txt_txt {
+  height: auto;
+  width: 100%;
+  display: inline-block;
+  text-align: justify;
+}
+
+@media only screen and (min-width: 700px) {
+  .l-img-r-txt_img {
+    height: 300px;
+    width: 50%;
+    float: left;
+  }
+
+  .l-img-r-txt_txt {
+    height: 300px;
+    width: 45%;
+    float: right;
+    text-align: justify;
+  }
+}
