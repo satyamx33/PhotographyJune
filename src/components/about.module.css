@@ -2,62 +2,106 @@
   margin-top: 5vh;
   margin-bottom: 2vh;
   padding: 0 4vw;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .seven h1 {
-text-align: center;
-    font-size:30px; font-weight:300; color:#222; letter-spacing:1px;
-    text-transform: uppercase;
-
-    display: grid;
-    grid-template-columns: 1fr max-content 1fr;
-    grid-template-rows: 27px 0;
-    grid-gap: 20px;
-    align-items: center;
-    padding:5vh 0 2vh;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+  color: #222;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: 27px 0;
+  grid-gap: 20px;
+  align-items: center;
+  padding: 5vh 0 2vh;
 }
 
-.seven h1:after,.seven h1:before {
-    content: " ";
-    display: block;
-    border-bottom: 1px solid #c50000;
-    border-top: 1px solid #c50000;
-    height: 5px;
-  background-color:#f8f8f8;
+.seven h1:after,
+.seven h1:before {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid #c50000;
+  border-top: 1px solid #c50000;
+  height: 5px;
+  background-color: #f8f8f8;
 }
 
 .l-img-r-txt {
-  display: flow-root;
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .l-img-r-txt_img {
-  height: 300px;
   width: 100%;
-  display: inline-block;
-  background-position: center;
+  height: auto; /* Changed from fixed height to auto */
+  aspect-ratio: 3/4; /* Set your desired aspect ratio (e.g., 3:4 for portrait) */
+  background-size: contain; /* Changed from cover to contain */
+  background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .l-img-r-txt_txt {
-  height: auto;
-  width: 100%;
-  display: inline-block;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+  font-weight: 300;
   text-align: justify;
+  text-justify: inter-word;
 }
 
-@media only screen and (min-width: 700px) {
-  .l-img-r-txt_img {
-    height: 300px;
-    width: 50%;
-    float: left;
-  }
+.l-img-r-txt_txt p {
+  margin-bottom: 1rem;
+}
 
+/* Mobile styles (less than 700px) */
+@media only screen and (max-width: 699px) {
+  .l-img-r-txt_img {
+    max-height: 60vh; 
+  }
+  
   .l-img-r-txt_txt {
-    height: 300px;
-    width: 45%;
-    float: right;
-    text-align: justify;
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+  
+  .seven h1 {
+    font-size: 26px;
+    padding: 4vh 0 2vh;
+  }
+}
+
+/* Desktop styles (700px and above) */
+@media only screen and (min-width: 700px) {
+  .l-img-r-txt {
+    flex-direction: row;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+  }
+  
+  .l-img-r-txt_img {
+    width: 40%; /* Adjust this percentage as needed */
+    max-width: 500px; /* Optional: set maximum width */
+    height: auto;
+    position: sticky;
+    top: 100px;
+    /* Remove background-size: contain if using actual <img> tag */
+  }
+  
+  .l-img-r-txt_txt {
+    width: 60%; /* Should add up to 100% with image width */
+    font-size: 1.1rem;
+    padding: 0 2rem;
   }
 }

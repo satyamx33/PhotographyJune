@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from './header.module.css';
 import fallbackImg from '../Assets/fallback.png';
-import videoSrc from '../Assets/8431808-uhd_4096_2160_25fps.mp4';
-import blackLogo from '../Assets/Black_Logo_PNG (1).png';
-import whitelogo from '../Assets/White_Logo_PNG (1).png'
+import videoSrc from '../Assets/db0230f7-e124-4f97-b251-5c4397b6364e.mp4';
+import whitelogo from '../Assets/White_Logo_PNG (1).png';
 
 const Header = () => {
   return (
