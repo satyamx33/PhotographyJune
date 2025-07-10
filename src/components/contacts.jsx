@@ -1,45 +1,65 @@
 import React from 'react';
-import styles from './contacts.module.css'; // CSS module
-import 'boxicons/css/boxicons.min.css'; // Import Boxicons globally (can also add via index.html or CDN)
+import styles from './contacts.module.css';
+import 'boxicons/css/boxicons.min.css';
 
 const Contact = () => {
   return (
-    <section className={`${styles.contact} ${styles.section}`} id="contact">
-      <div className={styles.seven}>
-      <h1 className={styles['section-title']}>Contact Me</h1>
+    <footer className={`${styles.contact} ${styles.section}`} id="contact">
+      <div className={styles.section__header}>
+        <h1 className={styles.section__title}>Capture The Moment</h1>
+        <p className={styles.section__subtitle}>Let's create visual magic together</p>
       </div>
-      <div className={`${styles['contact__container']} ${styles['bd-container']}`}>
-        <div className={`${styles['contact__content']} ${styles['bd-grid']}`}>
-          <div className={styles['contact__box']}>
-            <i className={`bx bx-home ${styles['contact__icon']}`}></i>
-            <h3 className={styles['contact__title']}>Location</h3>
-            <span className={styles['contact__description']}>#123 BBSR - India</span>
-          </div>
-
-          <div className={styles['contact__box']}>
-            <i className={`bx bx-phone ${styles['contact__icon']}`}></i>
-            <h3 className={styles['contact__title']}>Phone</h3>
-            <span className={styles['contact__description']}>9876543210</span>
-          </div>
-
-          <div className={styles['contact__box']}>
-            <i className={`bx bx-envelope ${styles['contact__icon']}`}></i>
-            <h3 className={styles['contact__title']}>Gmail</h3>
-            <span className={styles['contact__description']}>abc@gmail.com</span>
-          </div>
-
-          <div className={styles['contact__box']}>
-            <i className={`bx bx-chat ${styles['contact__icon']}`}></i>
-            <h3 className={styles['contact__title']}>Socials</h3>
-            <div>
-              <a href="#" className={styles['contact__social']}><i className="bx bxl-instagram"></i></a>
-              <a href="#" className={styles['contact__social']}><i className="bx bxl-twitter"></i></a>
-              <a href="#" className={styles['contact__social']}><i className="bx bxl-snapchat"></i></a>
+      
+      <div className={styles.contact__container}>
+        <div className={styles.contact__grid}>
+          <div className={`${styles.contact__card} ${styles.card__glow}`}>
+            <div className={styles.contact__icon__wrapper}>
+              <i className={`bx bx-map ${styles.contact__icon}`}></i>
             </div>
+            <h3 className={styles.contact__title}>Studio Location</h3>
+            <span className={styles.contact__description}>#123 BBSR, India</span>
+            <div className={styles.card__overlay}></div>
+          </div>
+
+          <div className={`${styles.contact__card} ${styles.card__glow}`}>
+            <div className={styles.contact__icon__wrapper}>
+              <i className={`bx bx-phone ${styles.contact__icon}`}></i>
+            </div>
+            <h3 className={styles.contact__title}>Call Me</h3>
+            <a href="tel:9876543210" className={styles.contact__link}>+91 98765 43210</a>
+            <div className={styles.card__overlay}></div>
+          </div>
+
+          <div className={`${styles.contact__card} ${styles.card__glow}`}>
+            <div className={styles.contact__icon__wrapper}>
+              <i className={`bx bx-envelope ${styles.contact__icon}`}></i>
+            </div>
+            <h3 className={styles.contact__title}>Email Me</h3>
+            <a href="mailto:abc@gmail.com" className={styles.contact__link}>abc@gmail.com</a>
+            <div className={styles.card__overlay}></div>
+          </div>
+
+          <div className={`${styles.contact__card} ${styles.card__glow}`}>
+            <div className={styles.contact__icon__wrapper}>
+              <i className={`bx bx-share-alt ${styles.contact__icon}`}></i>
+            </div>
+            <h3 className={styles.contact__title}>Socials</h3>
+            <div className={styles.social__links}>
+              <a href="#" className={styles.social__link} aria-label="Instagram">
+                <i className="bx bxl-instagram"></i>
+              </a>
+              <a href="#" className={styles.social__link} aria-label="Twitter">
+                <i className="bx bxl-twitter"></i>
+              </a>
+              <a href="#" className={styles.social__link} aria-label="Behance">
+                <i className="bx bxl-behance"></i>
+              </a>
+            </div>
+            <div className={styles.card__overlay}></div>
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 

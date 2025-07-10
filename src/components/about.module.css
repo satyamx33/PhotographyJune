@@ -5,6 +5,7 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+    background-color: rgb(248, 250, 239);
 }
 
 .seven h1 {
@@ -26,10 +27,10 @@
 .seven h1:before {
   content: " ";
   display: block;
-  border-bottom: 1px solid #c50000;
-  border-top: 1px solid #c50000;
+  border-bottom: 3px solid #24e2ff;
+  border-top: 3px solid #24e2ff;
   height: 5px;
-  background-color: #f8f8f8;
+  background-color: rgb(248, 250, 239);
 }
 
 .l-img-r-txt {
@@ -42,7 +43,7 @@
 .l-img-r-txt_img {
   width: 100%;
   height: auto; /* Changed from fixed height to auto */
-  aspect-ratio: 3/4; /* Set your desired aspect ratio (e.g., 3:4 for portrait) */
+  aspect-ratio: 2.9/3.7; /* Set your desired aspect ratio (e.g., 3:4 for portrait) */
   background-size: contain; /* Changed from cover to contain */
   background-position: top center;
   background-repeat: no-repeat;

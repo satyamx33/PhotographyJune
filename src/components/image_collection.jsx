@@ -29,30 +29,30 @@ const portfolioData = [
 const ImageCollection = () => {
   return (
     <section id="portfolio" className={styles.portfolioSection}>
-      <div className={styles.seven}>
-        <h1>Portfolio Collection</h1>
+      <div className={styles.section__header}>
+        <h1 className={styles.section__title}>Portfolio Collection</h1>
       </div>
-      <ul className={styles.container}>
+      <div className={styles.portfolioGrid}>
         {portfolioData.map((item) => (
-          <li className={styles.item} key={item.id}>
+          <div className={styles.portfolioItem} key={item.id}>
             <Link
               to={`/portfolio/${item.route}`}
-              className={styles.imageButton}
+              className={styles.portfolioLink}
               aria-label={`View ${item.title} portfolio`}
             >
-              <figure className={styles.figure}>
+              <div className={styles.imageWrapper}>
                 <img
                   src={item.img}
                   alt={`${item.title} Portfolio`}
-                  className={styles.image}
+                  className={styles.portfolioImage}
                   loading="lazy"
                 />
-              </figure>
-              <div className={styles.imageTitle}>{item.title}</div>
+              </div>
+              <div className={styles.portfolioTitle}>{item.title}</div>
             </Link>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   );
 };

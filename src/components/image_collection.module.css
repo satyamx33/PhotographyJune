@@ -1,111 +1,137 @@
+/* image_collection.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #111;
+  --secondary-color: #f5a623;
+  --accent-color: #24e2ff;
+  --text-color: #3c3c3c;
+  --light-color: #f8f8f8;
+  --bg-color: #f8faef;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Base Styles */
 .portfolioSection {
-  padding: 3rem 1rem;
-  background-color: #f9f9f9;
+  padding: 2rem 2rem;
+  background-color: var(--bg-color);
+  font-family: 'Poppins', sans-serif;
 }
 
-.seven {
+/* Consistent Header */
+.section__header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
-.seven h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  font-weight: bold;
-  color: #333;
-}
-
-.container {
+.section__title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  color: #222;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   display: grid;
-  gap: 2rem;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: 27px 0;
+  grid-gap: 20px;
+  align-items: center;
+  padding: 5vh 1vw 0;
+  margin-bottom: -20px;
+}
+
+.section__title::after,.section__title::before {
+  content: " ";
+  display: block;
+  border-bottom: 3px solid #24e2ff;
+  border-top: 3px solid #24e2ff;
+  height: 5px;
+  background-color: rgb(248, 250, 239);
+}
+
+/* Portfolio Grid - Smart Layout */
+.portfolioGrid {
+  display: grid;
+  gap: 1.5rem;
   padding: 0;
   margin: 0 auto;
-  list-style: none;
-  max-width: 1200px;
+  max-width: 1400px;
+  grid-auto-flow: dense;
+  justify-content: center;
 }
 
-/* Mobile: 1 column */
-@media (max-width: 700px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
+.portfolioItem {
+  transition: var(--transition);
+  min-width: 0; /* Fixes flexbox overflow */
 }
 
-/* Tablet: 2 rows × 5 columns (10 items) */
-@media (min-width: 701px) and (max-width: 1200px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Desktop: 5 rows × 2 columns (10 items) */
-@media (min-width: 1201px) {
-  .container {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-.item {
-  text-align: center;
-}
-
-.imageButton {
+.portfolioLink {
   display: block;
-  width: 100%;
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.imageWrapper {
   overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  aspect-ratio: 1/1;
 }
 
-.imageButton:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-.figure {
-  margin: 0;
-  padding: 0;
-}
-
-.image {
+.portfolioImage {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
 }
 
-.imageTitle {
-  padding: 1rem;
+.portfolioTitle {
+  padding: 1.2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #222;
-  background-color: #f2f2f2;
-  border-top: 1px solid #ddd;
+  color: var(--primary-color);
+  background-color: white;
+  border-radius: 0 0 12px 12px;
+  text-align: center;
 }
 
-/* Detail View */
-.portfolioDetail {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+/* Hover Effects */
+.portfolioItem:hover {
+  transform: translateY(-5px);
 }
 
-.backButton {
-  background-color: #333;
-  color: white;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  margin-bottom: 2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.portfolioItem:hover .imageWrapper {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-.backButton:hover {
-  background-color: #555;
+/* Responsive Grid Layout */
+/* Mobile: 1x10 (single column) */
+@media (max-width: 639px) {
+  .portfolioGrid {
+    grid-template-columns: repeat(1, minmax(250px, 350px));
+  }
+}
+
+/* Tablet: 2x5 */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .portfolioGrid {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+}
+
+/* Desktop: 5x2 */
+@media (min-width: 1024px) {
+  .portfolioGrid {
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+  }
+}
+
+/* Adjustments for very large screens */
+@media (min-width: 1600px) {
+  .portfolioGrid {
+    grid-template-columns: repeat(5, minmax(250px, 1fr));
+  }
 }
